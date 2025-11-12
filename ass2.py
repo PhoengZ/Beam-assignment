@@ -1,6 +1,10 @@
 import sys
 from pathlib import Path
 
+# let L is length of path in command and n is number of file in folder
+# time complexity is O(nlog(n)) 
+# space complexity is O(L + n)
+
 def main():
     print("Type 'exit' to quite")
     cur = Path.cwd().resolve()
@@ -20,6 +24,7 @@ def main():
             items = []
             for i in cur.iterdir():
                 items.append(i.name)
+            items.sort()
             print(" ".join(items))
         elif c == "mkdir":
             if not arg:
@@ -57,6 +62,7 @@ def main():
                     continue
             except FileNotFoundError:
                 print(f"{new_path} is not found")
+                continue
             cur = correct_path
         else:
             print(f"Command :{c} isn't defined")

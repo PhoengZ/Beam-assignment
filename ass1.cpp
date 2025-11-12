@@ -2,6 +2,9 @@
 #include <vector>
 
 using namespace std;
+// let n is number of input, h is max number of each input, w is sum of inputs
+// time complexity is O(n + w*h)
+// space complexity is O(n+ w*h)
 
 int main(){
     vector<int> v;
